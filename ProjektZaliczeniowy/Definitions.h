@@ -1,0 +1,11 @@
+#pragma once
+#define SCREEN_WIDTH 1000
+#define SCREEN_HEIGHT 620
+#define SPLASH_STATE_SHOW_TIME 1.5
+#define SPLASH_SCREEN_BACKGROUND_FILEPATH "Zasoby/obrazy/LOGO.png"
+#define MAIN_MANU_BACKGROUND_FILEPATH "Zasoby/obrazy/MAIN_MENU.jpg"
+#define MAIN_MENU_TITLE_FILEPATH "Zasoby/obrazy/TITLE.png"
+#define MAIN_MENU_PLAY_BUTTON_FILEPATH "Zasoby/obrazy/PLAY.png"
+#define MAIN_MENU_OPTIONS_BUTTON_FILEPATH "Zasoby/obrazy/OPTIONS.png"
+#define MAIN_MENU_EXIT_BUTTON_FILEPATH "Zasoby/obrazy/EXIT.png"
+
