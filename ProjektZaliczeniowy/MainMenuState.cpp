@@ -28,29 +28,31 @@ namespace BreakOut
 		this->_exitButton.setTexture(this->_data->assets.GetTexture("Exit Button"));
 		this->_title.setTexture(this->_data->assets.GetTexture("Title"));
 
-		this->_playButton.setPosition((SCREEN_WIDTH / 2) - (this->_playButton.getGlobalBounds().width/2), this->_playButton.getGlobalBounds().height*0.7);
-		this->_optionsButton.setPosition((SCREEN_WIDTH / 2) - (this->_optionsButton.getGlobalBounds().width / 2), (this->_optionsButton.getGlobalBounds().height*0.8));
-		this->_exitButton.setPosition((SCREEN_WIDTH / 2) - (this->_exitButton.getGlobalBounds().width / 2), (this->_exitButton.getGlobalBounds().height*0.9));
-		this->_title.setPosition((SCREEN_WIDTH / 2) - (this->_title.getGlobalBounds().width / 2),this->_title.getGlobalBounds().height*0.2);
+		this->_playButton.setPosition((SCREEN_WIDTH / 2) - (this->_playButton.getGlobalBounds().width/2), this->_playButton.getGlobalBounds().height*3.0);
+		this->_optionsButton.setPosition((SCREEN_WIDTH / 2) - (this->_optionsButton.getGlobalBounds().width / 2), (this->_optionsButton.getGlobalBounds().height*4.5));
+		this->_exitButton.setPosition((SCREEN_WIDTH / 2) - (this->_exitButton.getGlobalBounds().width / 2), (this->_exitButton.getGlobalBounds().height*6.0));
+		this->_title.setPosition((SCREEN_WIDTH / 2) - (this->_title.getGlobalBounds().width / 2),this->_title.getGlobalBounds().height*0.9);
 	}
 	void MainMenuState::HandleInput()
 	{
 		Event event;
 		while (this->_data->window.pollEvent(event))
 		{
+			//cout << this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window) << endl;
+
 			if (Event::Closed == event.type)
 			{
 				this->_data->window.close();
 			}
-			if (this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window))
+			else if (this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window))
 			{
 				cout << "Game Screen" << endl;
 			}
-			if (this->_data->input.IsSpriteClicked(this->_optionsButton, Mouse::Left, this->_data->window))
+			else if (this->_data->input.IsSpriteClicked(this->_optionsButton, Mouse::Left, this->_data->window))
 			{
 				cout << "Options Screen" << endl;
 			}
-			if (this->_data->input.IsSpriteClicked(this->_exitButton, Mouse::Left, this->_data->window))
+			else if (this->_data->input.IsSpriteClicked(this->_exitButton, Mouse::Left, this->_data->window))
 			{
 				this->_data->window.close();
 			}
