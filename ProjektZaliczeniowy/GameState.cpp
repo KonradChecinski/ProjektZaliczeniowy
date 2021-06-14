@@ -17,6 +17,9 @@ namespace BreakOut
 	void GameState::Init()
 	{
 		this->_data->assets.LoadTexture("Paddle", PADDLE_FILEPATH);
+		this->_data->assets.LoadTexture("Brick", BRICK_FILEPATH);
+
+		brick = new Brick(_data);
 
 
 		this->_background.setTexture(this->_data->assets.GetTexture("Background"));
@@ -54,6 +57,7 @@ namespace BreakOut
 		this->_data->window.clear();
 		this->_data->window.draw(this->_background);
 		this->_data->window.draw(this->_paddle);
+		brick->DrawBricks();
 		this->_data->window.display();
 
 

@@ -88,13 +88,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-audio-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,15 +105,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib; sfml-window.lib; sfml-system.lib; sfml-audio.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-system.lib;sfml-window.lib;sfml-audio.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,11 +122,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,20 +138,25 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Piotrek\OneDrive - Politechnika Śląska\Pulpit\SFML-2.5.1\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="OptionsState.cpp" />
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
@@ -158,8 +164,11 @@
     <ClInclude Include="AssetManager.h" />
     <ClInclude Include="Definitions.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="OptionsState.h" />
+    <ClInclude Include="Brick.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="State.h" />
