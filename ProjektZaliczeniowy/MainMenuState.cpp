@@ -3,6 +3,8 @@
 #include<sstream>
 #include "Definitions.h"
 #include<iostream>
+#include"GameState.h"
+#include"OptionsState.h"
 using namespace sf;
 using namespace std;
 
@@ -38,7 +40,6 @@ namespace BreakOut
 		Event event;
 		while (this->_data->window.pollEvent(event))
 		{
-			//cout << this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window) << endl;
 
 			if (Event::Closed == event.type)
 			{
@@ -46,11 +47,11 @@ namespace BreakOut
 			}
 			else if (this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window))
 			{
-				cout << "Game Screen" << endl;
+				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
 			else if (this->_data->input.IsSpriteClicked(this->_optionsButton, Mouse::Left, this->_data->window))
 			{
-				cout << "Options Screen" << endl;
+				this->_data->machine.AddState(StateRef(new OptionsState(_data)), true);
 			}
 			else if (this->_data->input.IsSpriteClicked(this->_exitButton, Mouse::Left, this->_data->window))
 			{
