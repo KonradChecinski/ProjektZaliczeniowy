@@ -35,8 +35,7 @@ namespace BreakOut
 
 		GameDataRef _data;
 		Sprite _background;
-		void Draw(double dt);
-		RectangleShape ksztalt;
+		Sprite _paddle;
 		Vector2f Szyb{ SzybPaletka,0.f };
 	};
 	
