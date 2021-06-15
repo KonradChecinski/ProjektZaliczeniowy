@@ -3,6 +3,9 @@
 #include"Game.h"
 #include"State.h"
 #include "Definitions.h"
+#include"Brick.h"
+#include"Game.h"
+#include<SFML/Graphics.hpp>
 using namespace sf;
 
 namespace BreakOut
@@ -11,19 +14,6 @@ namespace BreakOut
 	{
 	public:
 		GameState(GameDataRef data);
-		
-		GameState(double X, double Y);
-		GameState() = delete;
-		~GameState() = default;
-
-
-		Vector2f getPosition();
-
-
-		double prawa();
-		double lewa();
-		double gora();
-		double dol();
 
 		void Init();
 		void HandleInput();
@@ -36,7 +26,7 @@ namespace BreakOut
 		GameDataRef _data;
 		Sprite _background;
 		Sprite _paddle;
-		Vector2f Szyb{ SzybPaletka,0.f };
+		Brick* brick;
 	};
 	
 	
