@@ -15,7 +15,7 @@ namespace BreakOut
 		void DrawBricks();
 	private:
 		GameDataRef _data;
-		vector<Sprite>brickSprites; 
+		vector<Sprite>brickSprites;
 
 	};
 
