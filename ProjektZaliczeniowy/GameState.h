@@ -4,13 +4,16 @@
 #include"State.h"
 #include "Definitions.h"
 #include"Brick.h"
+#include"Ball.h"
 #include"Game.h"
 #include<SFML/Graphics.hpp>
 using namespace sf;
 
+extern int Actual_Level;
+
 namespace BreakOut
 {
-	int Actual_Level = 1;
+	
 
 	class GameState : public State
 	{
@@ -30,6 +33,7 @@ namespace BreakOut
 		Sprite _paddle;
 
 		Brick* brick;
+		Ball* ball;
 	};
 	
 	

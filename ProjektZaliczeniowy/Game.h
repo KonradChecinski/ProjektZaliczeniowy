@@ -5,12 +5,14 @@
 #include"StateMachine.h"
 #include"AssetManager.h"
 #include"InputManager.h"
+
 using namespace sf;
 using namespace std;
 
 
 namespace BreakOut
 {
+	
 	struct GameData
 	{
 		StateMachine machine;
@@ -29,6 +31,7 @@ namespace BreakOut
 	private:
 		const double dt = 1.0f / 144.0f;
 		Clock _clock;
+		
 
 		GameDataRef _data = make_shared<GameData>();
 

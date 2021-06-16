@@ -9,6 +9,7 @@ using namespace std;
 
 namespace BreakOut
 {
+	int Actual_Level = 1;
 	GameState::GameState(GameDataRef data) : _data(data)
 	{
 
@@ -18,12 +19,13 @@ namespace BreakOut
 
 	void GameState::Init()
 	{
+		
 		this->_data->assets.LoadTexture("Paddle", PADDLE_FILEPATH);
 		this->_data->assets.LoadTexture("Brick", BRICK_FILEPATH);
+		this->_data->assets.LoadTexture("Ball", BALL_FILEPATH);
 
 		brick = new Brick(_data);
-
-		//brick->SpawnBrick();
+		ball = new Ball(_data);
 		
 
 		this->_background.setTexture(this->_data->assets.GetTexture("Background"));
@@ -32,6 +34,8 @@ namespace BreakOut
 
 		this->_paddle.setPosition((SCREEN_WIDTH / 2) - (this->_paddle.getGlobalBounds().width / 2), this->_paddle.getGlobalBounds().height * 3.3);
 
+		brick->PrepareLevel(Actual_Level - 1);
+		ball->SpawnBall();
 
 	}
 	void GameState::HandleInput()
@@ -43,22 +47,17 @@ namespace BreakOut
 			{
 				this->_data->window.close();
 			}
-			if (this->_data->input.IsSpriteClicked(_background, Mouse::Left, this->_data->window)) {
+			/*if (this->_data->input.IsSpriteClicked(_background, Mouse::Left, this->_data->window)) {
 				
-				try {
-					brick->PrepareLevel(Actual_Level-1);
-				}
-				catch(exception e) {
-					this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
-				}
 				
-			}
+				
+			}*/
 		}
 	}
 
 	void GameState::Update(double dt)
 	{
-		
+		ball->MoveBall(dt);
 	}
 
 
@@ -71,6 +70,7 @@ namespace BreakOut
 		this->_data->window.draw(this->_background);
 		this->_data->window.draw(this->_paddle);
 		brick->DrawBricks();
+		ball->DrawBall();
 		this->_data->window.display();
 
 

@@ -18,7 +18,7 @@ namespace BreakOut
 		Sprite sprite(_data->assets.GetTexture("Brick"));
 		float x = (float)(SCREEN_WIDTH / AMOUNT_OF_BRICK_IN_LINE) / (float)(sprite.getTexture()->getSize().x);
 		sprite.setScale(x,x);
-		sprite.setPosition((sprite.getGlobalBounds().width)*width , (sprite.getGlobalBounds().height)*height);
+		sprite.setPosition((sprite.getGlobalBounds().width)*width + 5, (sprite.getGlobalBounds().height)*height);
 		brickSprites.push_back(sprite);
 	}
 
@@ -38,7 +38,7 @@ namespace BreakOut
 
 	void Brick::PrepareLevel(int level) {
 		Levels levels;
-		cout << levels.level.size();
+		/*cout << levels.level.size();*/
 		try {
 			if (level >= levels.level.size()) {
 				throw;
