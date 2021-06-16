@@ -26,6 +26,7 @@ namespace BreakOut
 		GameDataRef _data;
 		Sprite _background;
 		Sprite _paddle;
+
 		Brick* brick;
 	};
 	

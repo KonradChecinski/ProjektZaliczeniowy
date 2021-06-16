@@ -11,11 +11,12 @@ namespace BreakOut
 	{
 	public:
 		Brick(GameDataRef data);
-		void SpawnBrick();
+		//void SpawnBrick();
 		void DrawBricks();
 	private:
 		GameDataRef _data;
 		vector<Sprite>brickSprites;
+		Sprite *_brick;
 
 	};
 

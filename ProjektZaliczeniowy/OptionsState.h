@@ -22,6 +22,7 @@ namespace BreakOut
 		Sprite _back;
 		Sprite _options1;
 		Sprite _options2;
+		Sprite _playButton;
 
 
 	};

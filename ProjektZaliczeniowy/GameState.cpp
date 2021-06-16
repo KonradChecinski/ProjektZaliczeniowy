@@ -21,13 +21,14 @@ namespace BreakOut
 
 		brick = new Brick(_data);
 
+		//brick->SpawnBrick();
+		
 
 		this->_background.setTexture(this->_data->assets.GetTexture("Background"));
 		this->_paddle.setTexture(this->_data->assets.GetTexture("Paddle"));
 
 
 		this->_paddle.setPosition((SCREEN_WIDTH / 2) - (this->_paddle.getGlobalBounds().width / 2), this->_paddle.getGlobalBounds().height * 3.3);
-
 
 
 	}
