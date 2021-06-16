@@ -3,6 +3,8 @@
 #include "Game.h"
 #include "Definitions.h"
 
+
+
 int main()
 {
 	BreakOut::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "BreakOut");

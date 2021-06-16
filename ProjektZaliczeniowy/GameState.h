@@ -10,6 +10,8 @@ using namespace sf;
 
 namespace BreakOut
 {
+	int Actual_Level = 1;
+
 	class GameState : public State
 	{
 	public:
@@ -21,7 +23,7 @@ namespace BreakOut
 		void Draw(double dt);
 
 	private:
-
+		int level;
 
 		GameDataRef _data;
 		Sprite _background;

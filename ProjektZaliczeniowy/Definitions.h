@@ -18,3 +18,6 @@
 const double SzerPaletka{ 125.f }, WysPaletka{ 20.f }, SzybPaletka{ 5.f };
 const double SzerKostka{ 60.f }, WysKostka{ 20.f };
 const int LiczbaKostekX{ 14 }, LiczbaKostekY{ 6 };
+
+#define SPEED_PADDLE 200.0f
+#define AMOUNT_OF_BRICK_IN_LINE 15

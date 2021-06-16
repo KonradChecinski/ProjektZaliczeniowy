@@ -1,6 +1,8 @@
 #include "GameState.h"
 #include<sstream>
 #include "Definitions.h"
+#include "Levels.h"
+#include"MainMenuState.h"
 #include<iostream>
 using namespace sf;
 using namespace std;
@@ -40,6 +42,16 @@ namespace BreakOut
 			if (Event::Closed == event.type)
 			{
 				this->_data->window.close();
+			}
+			if (this->_data->input.IsSpriteClicked(_background, Mouse::Left, this->_data->window)) {
+				
+				try {
+					brick->PrepareLevel(Actual_Level-1);
+				}
+				catch(exception e) {
+					this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+				}
+				
 			}
 		}
 	}
