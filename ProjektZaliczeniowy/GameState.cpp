@@ -9,7 +9,7 @@ using namespace std;
 
 namespace BreakOut
 {
-	int Actual_Level = 1;
+	int Actual_Level = 3;
 	GameState::GameState(GameDataRef data) : _data(data)
 	{
 
@@ -31,8 +31,9 @@ namespace BreakOut
 		this->_background.setTexture(this->_data->assets.GetTexture("Background"));
 		this->_paddle.setTexture(this->_data->assets.GetTexture("Paddle"));
 
-
-		this->_paddle.setPosition((SCREEN_WIDTH / 2) - (this->_paddle.getGlobalBounds().width / 2), this->_paddle.getGlobalBounds().height * 3.3);
+		this->_paddle.setScale(0.7, 0.7);
+		this->_paddle.setPosition((SCREEN_WIDTH / 2) - (this->_paddle.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 1.2));
+		
 
 		brick->PrepareLevel(Actual_Level - 1);
 		ball->SpawnBall();

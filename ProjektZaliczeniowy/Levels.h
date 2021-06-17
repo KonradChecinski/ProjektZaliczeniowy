@@ -11,6 +11,8 @@ namespace BreakOut
 	public:
 		Levels();
 		vector<array<float, 2>> level1;
+		vector<array<float, 2>> level2;
+		vector<array<float, 2>> level3;
 		array<float, 2> brick;
 		vector<vector<array<float, 2>>> level;
 		
