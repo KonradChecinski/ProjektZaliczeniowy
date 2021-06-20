@@ -14,7 +14,7 @@ namespace BreakOut
 		void MoveBall(float dt, Vector2f movement);
 		void SpawnBall();
 		void DrawBall();
-		void SpeedBall(Vector2f& movement);
+		void SpeedBall(Vector2f& movement, Vector2f& movementOrigin);
 
 		const Sprite& GetSprite() const;
 
@@ -25,10 +25,9 @@ namespace BreakOut
 		Sprite *_ball;
 
 		Clock _clockBall;
-		//Clock _clockBallSpeed;
 
 
-		double time{};
+		Time time=seconds(9);
 
 	};
 

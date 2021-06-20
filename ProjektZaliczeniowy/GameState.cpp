@@ -21,6 +21,7 @@ namespace BreakOut
 	void GameState::Init()
 	{
 		movement = { 0,1 };
+		movementOrigin = { 0,1 };
 		this->_data->assets.LoadTexture("Paddle", PADDLE_FILEPATH);
 		this->_data->assets.LoadTexture("Brick", BRICK_FILEPATH);
 		this->_data->assets.LoadTexture("Ball", BALL_FILEPATH);
@@ -67,14 +68,14 @@ namespace BreakOut
 		vector<Sprite> brickSprites = brick->GetSprites();
 		for (int i = 0; i < brickSprites.size(); i++)
 		{
-			if (collision.CheckSpriteCollision(ball->GetSprite(), brickSprites.at(i), movement)) {
+			if (collision.CheckBrickCollision(ball->GetSprite(), brickSprites.at(i), movement)) {
 				brick->DeleteBrick(brickSprites.at(i), i);
 				break;
 			}
 		}
 
 		collision.CheckWallCollsion(ball->GetSprite(), movement);
-		collision.CheckPaddleCollision(ball->GetSprite(), paddle->GetSprite(), movement);
+		collision.CheckPaddleCollision(ball->GetSprite(), paddle->GetSprite(), movement, movementOrigin);
 		
 
 
@@ -84,7 +85,7 @@ namespace BreakOut
 
 
 		ball->MoveBall(dt, movement);
-		ball->SpeedBall(movement);
+		ball->SpeedBall(movement, movementOrigin);
 		paddle->MovePaddle(dt);
 	}
 

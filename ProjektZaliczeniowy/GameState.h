@@ -30,6 +30,7 @@ namespace BreakOut
 
 
 		Vector2f movement{};
+		Vector2f movementOrigin{};
 
 
 	private:

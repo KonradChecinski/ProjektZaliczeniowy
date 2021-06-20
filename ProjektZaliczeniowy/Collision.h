@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
 #include "Definitions.h"
 
 
@@ -13,9 +14,9 @@ namespace BreakOut
 	public:
 		Collision();
 
-		bool CheckSpriteCollision(Sprite sprite1, Sprite sprite2, Vector2f& movement);
-		bool CheckPaddleCollision(Sprite sprite1, Sprite sprite2, Vector2f& movement);
-		bool CheckWallCollsion(Sprite sprite1, Vector2f &movement);
+		bool CheckBrickCollision(Sprite ball, Sprite brick, Vector2f& movement);
+		bool CheckPaddleCollision(Sprite ball, Sprite paddle, Vector2f& movement, Vector2f& movementOrigin);
+		bool CheckWallCollsion(Sprite wall, Vector2f &movement);
 	};
 
 }
