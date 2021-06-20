@@ -51,10 +51,10 @@ namespace BreakOut
 	void Ball::SpeedBall(Vector2f& movement, Vector2f& movementOrigin) {
 		if (_clockBall.getElapsedTime().asSeconds() > time.asSeconds()) {
 			time = time + seconds(6);
-			movement.x = movement.x * 1.005;
-			movement.y = movement.y * 1.005;
-			movementOrigin.x = movementOrigin.x * 1.005;
-			movementOrigin.y = movementOrigin.y * 1.005;
+			movement.x = movement.x * 1.01;
+			movement.y = movement.y * 1.01;
+			movementOrigin.x = movementOrigin.x * 1.01;
+			movementOrigin.y = movementOrigin.y * 1.01;
 			cout << "speed!!!" << endl;
 		}
 	}

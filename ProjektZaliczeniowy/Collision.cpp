@@ -59,7 +59,7 @@ namespace BreakOut
 
 
 
-			if ((rectBall.left + rectBall.width/2) <= rectPaddle.left + (2 * rectPaddle.width / 6))
+			if ((rectBall.left + rectBall.width/2) <= rectPaddle.left + (3 * rectPaddle.width / 7))
 			{
 				x = movementOrigin.x;
 				x = abs(x);
@@ -78,12 +78,12 @@ namespace BreakOut
 				movement = { -x, -y };
 
 			}
-			else if ((rectBall.left + rectBall.width / 2) < rectPaddle.left + (4 * rectPaddle.width / 6))
+			else if ((rectBall.left + rectBall.width / 2) < rectPaddle.left + (4 * rectPaddle.width / 7))
 			{
 				movement = { movement.x, -movement.y };
 
 			}
-			else if ((rectBall.left + rectBall.width / 2) < rectPaddle.left + (6 * rectPaddle.width / 6))
+			else if ((rectBall.left + rectBall.width / 2) < rectPaddle.left + (7 * rectPaddle.width / 7))
 			{
 				
 				x = movementOrigin.x;
