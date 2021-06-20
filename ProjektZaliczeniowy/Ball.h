@@ -11,9 +11,10 @@ namespace BreakOut
 	{
 	public:
 		Ball(GameDataRef data);
-		void MoveBall(float dt);
+		void MoveBall(float dt, Vector2f movement);
 		void SpawnBall();
 		void DrawBall();
+		void SpeedBall(Vector2f& movement);
 
 		const Sprite& GetSprite() const;
 
@@ -24,6 +25,10 @@ namespace BreakOut
 		Sprite *_ball;
 
 		Clock _clockBall;
+		//Clock _clockBallSpeed;
+
+
+		double time{};
 
 	};
 

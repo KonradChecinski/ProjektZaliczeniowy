@@ -15,6 +15,7 @@ namespace BreakOut
 		void DrawBricks();
 		void DeleteBrick(Sprite sprite,int i);
 		void PrepareLevel(int level);
+		const vector<Sprite> &GetSprites() const;
 	private:
 		GameDataRef _data;
 		vector<Sprite> brickSprites;

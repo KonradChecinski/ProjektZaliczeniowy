@@ -33,24 +33,30 @@ namespace BreakOut
 
 	}
 
-	void Ball::MoveBall(float dt) {
+	void Ball::MoveBall(float dt, Vector2f movement) {
 		/*cout << _clockBall.getElapsedTime().asSeconds() << endl;*/
 		if (_clockBall.getElapsedTime().asSeconds() > 2) {
-
-				;
 				for (int i = 0; i < ballSprites.size(); i++)
 				{
 					Vector2f position = ballSprites.at(i).getPosition();
-					//cout << position.x << endl;
-					float movement = SPEED_BALL * dt;
-
-					//__ball.move(0, movement);
-					//_ball.move(0, movement)
-					ballSprites.at(i).move(0, movement);
+					movement.x = movement.x * SPEED_BALL * dt;
+					movement.y = movement.y * SPEED_BALL * dt;
+					//cout << "X: " << movement.x << " Y: " << movement.y << endl;
+					ballSprites.at(i).move(movement);
 				}
 		}
 		
 	}
+
+	void Ball::SpeedBall(Vector2f& movement) {
+		if (_clockBall.getElapsedTime().asSeconds() > time) {
+			time += 6;
+			movement.x = movement.x * 1.01;
+			movement.y = movement.y * 1.01;
+			cout << "speed!!!" << endl;
+		}
+	}
+
 
 	const Sprite& Ball::GetSprite() const {
 		return ballSprites.at(0);

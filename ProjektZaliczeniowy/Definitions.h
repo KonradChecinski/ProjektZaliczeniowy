@@ -18,7 +18,7 @@
 #define BALL_FILEPATH "Zasoby/obrazy/BALL.png"
 const double SzerPaletka{ 125.f }, WysPaletka{ 20.f }, SzybPaletka{ 5.f };
 
-#define SPEED_PADDLE 200.0f
-#define SPEED_BALL 200.0f
+#define SPEED_PADDLE 400.0f
+#define SPEED_BALL 300.0f
 
 #define AMOUNT_OF_BRICK_IN_LINE 15

@@ -16,15 +16,17 @@ namespace BreakOut
 	{
 		
 		Sprite sprite(_data->assets.GetTexture("Brick"));
-		float x = (float)(SCREEN_WIDTH / AMOUNT_OF_BRICK_IN_LINE) / (float)(sprite.getTexture()->getSize().x);
+		//cout << sprite.getTexture()->getSize().x << endl;
+		float x = (float)(SCREEN_WIDTH / AMOUNT_OF_BRICK_IN_LINE) / (float)(sprite.getTexture()->getSize().x + 11);
 		sprite.setScale(x,x);
-		sprite.setPosition((sprite.getGlobalBounds().width)*width + 5, (sprite.getGlobalBounds().height)*height);
+		sprite.setPosition((sprite.getGlobalBounds().width)*width + 5 + 4*width, (sprite.getGlobalBounds().height)*height + 4 * height);
 		brickSprites.push_back(sprite);
 	}
 
 	void Brick::DeleteBrick(Sprite sprite, int i) {
 		brickSprites.erase(brickSprites.begin() + i);
 		sprite.setPosition(-1000, 0);
+		//cout << "Brick " << i << endl;
 	}
 
 	void Brick::DrawBricks()
@@ -52,4 +54,7 @@ namespace BreakOut
 		}
 	}
 
+	const vector<Sprite> &Brick::GetSprites() const {
+		return brickSprites;
+	}
 }

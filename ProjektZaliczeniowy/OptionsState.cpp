@@ -3,6 +3,7 @@
 #include "Definitions.h"
 #include<iostream>
 #include"MainMenuState.h"
+#include"GameState.h"
 using namespace sf;
 using namespace std;
 
@@ -45,6 +46,10 @@ namespace BreakOut
 			if (this->_data->input.IsSpriteClicked(this->_back, Mouse::Left, this->_data->window))
 			{
 				this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+			}
+			if (this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window))
+			{
+				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
 
 		}

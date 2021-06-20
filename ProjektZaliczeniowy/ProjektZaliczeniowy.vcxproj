@@ -160,6 +160,7 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="OptionsState.cpp" />
     <ClCompile Include="Brick.cpp" />
+    <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
@@ -175,6 +176,7 @@
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="OptionsState.h" />
     <ClInclude Include="Brick.h" />
+    <ClInclude Include="Paddle.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="StateMachine.h" />
