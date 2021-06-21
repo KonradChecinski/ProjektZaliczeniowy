@@ -1,5 +1,5 @@
 #include "MainMenuState.h"
-#include "MainMenuState.h"
+#include "ChooseLevelState.h"
 #include<sstream>
 #include "Definitions.h"
 #include<iostream>
@@ -31,10 +31,10 @@ namespace BreakOut
 		this->_exitButton.setTexture(this->_data->assets.GetTexture("Exit Button"));
 		this->_title.setTexture(this->_data->assets.GetTexture("Title"));
 
-		this->_playButton.setPosition((SCREEN_WIDTH / 2) - (this->_playButton.getGlobalBounds().width/2), this->_playButton.getGlobalBounds().height*3.0);
-		this->_optionsButton.setPosition((SCREEN_WIDTH / 2) - (this->_optionsButton.getGlobalBounds().width / 2), (this->_optionsButton.getGlobalBounds().height*4.5));
-		this->_exitButton.setPosition((SCREEN_WIDTH / 2) - (this->_exitButton.getGlobalBounds().width / 2), (this->_exitButton.getGlobalBounds().height*6.0));
-		this->_title.setPosition((SCREEN_WIDTH / 2) - (this->_title.getGlobalBounds().width / 2),this->_title.getGlobalBounds().height*0.9);
+		this->_playButton.setPosition((SCREEN_WIDTH / 2) - (this->_playButton.getGlobalBounds().width / 2), this->_playButton.getGlobalBounds().height * 3.0);
+		this->_optionsButton.setPosition((SCREEN_WIDTH / 2) - (this->_optionsButton.getGlobalBounds().width / 2), (this->_optionsButton.getGlobalBounds().height * 4.5));
+		this->_exitButton.setPosition((SCREEN_WIDTH / 2) - (this->_exitButton.getGlobalBounds().width / 2), (this->_exitButton.getGlobalBounds().height * 6.0));
+		this->_title.setPosition((SCREEN_WIDTH / 2) - (this->_title.getGlobalBounds().width / 2), this->_title.getGlobalBounds().height * 0.9);
 	}
 	void MainMenuState::HandleInput()
 	{
@@ -48,7 +48,8 @@ namespace BreakOut
 			}
 			else if (this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window))
 			{
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				//this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				this->_data->machine.AddState(StateRef(new ChooseLevelState(_data)), true);
 			}
 			else if (this->_data->input.IsSpriteClicked(this->_optionsButton, Mouse::Left, this->_data->window))
 			{
@@ -70,7 +71,7 @@ namespace BreakOut
 	void MainMenuState::Draw(double dt)
 	{
 		this->_data->window.clear();
-		this -> _data->window.draw(this->_background);
+		this->_data->window.draw(this->_background);
 		this->_data->window.draw(this->_playButton);
 		this->_data->window.draw(this->_optionsButton);
 		this->_data->window.draw(this->_title);

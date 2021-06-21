@@ -23,6 +23,7 @@ namespace BreakOut
 	{
 	public:
 		GameState(GameDataRef data);
+		GameState(GameDataRef data, int actualLevel);
 
 		void Init();
 		void HandleInput();
@@ -34,6 +35,7 @@ namespace BreakOut
 		Vector2f movement{};
 		Vector2f movementOrigin{};
 
+		int Actual_Level = 1;
 
 	private:
 		int level;
@@ -51,7 +53,7 @@ namespace BreakOut
 		SoundBuffer soundBufferStart;
 		Sound soundStart;
 
-		int Actual_Level = 3;
+		
 	};
 	
 	

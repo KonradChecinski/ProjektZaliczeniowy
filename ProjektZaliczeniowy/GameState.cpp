@@ -10,10 +10,12 @@ using namespace std;
 
 namespace BreakOut
 {
-	
 	GameState::GameState(GameDataRef data) : _data(data)
 	{
-
+	}
+	GameState::GameState(GameDataRef data, int actualLevel) : _data(data)
+	{
+		Actual_Level = actualLevel;
 	}
 
 

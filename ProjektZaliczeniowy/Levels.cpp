@@ -48,7 +48,7 @@ namespace BreakOut
 		
 		level.push_back(level3);
 
-		
+		level4.push_back({14,3});
 
 		level4.push_back({7,7});
 		level.push_back(level4);

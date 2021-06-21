@@ -25,7 +25,7 @@ namespace BreakOut
 		this->_gameWin.setTexture(this->_data->assets.GetTexture("Game Win"));
 		this->_mainMenu.setTexture(this->_data->assets.GetTexture("Main Menu"));
 
-		this->_gameWin.setScale(0.8, 0.8);
+		this->_gameWin.setScale(0.9, 0.9);
 
 
 		this->_gameWin.setPosition((SCREEN_WIDTH / 2) - (this->_gameWin.getGlobalBounds().width / 2), this->_gameWin.getGlobalBounds().height * 0.4);
@@ -42,7 +42,9 @@ namespace BreakOut
 			}
 			if (this->_data->input.IsSpriteClicked(this->_mainMenu, Mouse::Left, this->_data->window))
 			{
-				this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+				//this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+				this->_data->machine.AddState(StateRef(new GameState(_data, 2)), true);
+
 			}
 
 		}
