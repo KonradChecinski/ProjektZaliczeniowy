@@ -98,6 +98,7 @@ namespace BreakOut
 			brickSprites.clear();
 			this->_data->machine.AddState(StateRef(new LoseScreenState(_data)), true);
 
+
 		}
 		
 		

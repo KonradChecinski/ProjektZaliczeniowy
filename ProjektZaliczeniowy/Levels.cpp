@@ -39,6 +39,8 @@ namespace BreakOut
 			}
 			k = 0;
 		}
+		level.push_back(level2);
+
 		for (int j = 0; j < 6; j++)
 		{
 			for (int i = AMOUNT_OF_BRICK_IN_LINE - 2 * (5-j); i <= AMOUNT_OF_BRICK_IN_LINE; i++) 

@@ -18,7 +18,7 @@ namespace BreakOut
 	{
 		this->_data->assets.LoadTexture("Game Over", LOSE_SCREEN_GAME_OVER_FILEPATH);
 		this->_data->assets.LoadTexture("Main Menu", MAIN_MENU_BUTTON_FILEPATH);
-		this->_data->assets.LoadTexture("Play Button", MAIN_MENU_PLAY_BUTTON_FILEPATH);
+		this->_data->assets.LoadTexture("Play Button", LOSE_SCREEN_PLAY_AGAIN_FILEPATH);
 
 
 		//this->_background.setTexture(this->_data->assets.GetTexture("Background"));
