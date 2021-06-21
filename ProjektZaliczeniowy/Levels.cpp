@@ -45,8 +45,12 @@ namespace BreakOut
 			k = 0;
 		}
 
+		
 		level.push_back(level3);
 
 		
+
+		level4.push_back({7,7});
+		level.push_back(level4);
 	}
 }

@@ -10,7 +10,7 @@ using namespace std;
 
 namespace BreakOut
 {
-	int Actual_Level = 1;
+	
 	GameState::GameState(GameDataRef data) : _data(data)
 	{
 
@@ -25,6 +25,13 @@ namespace BreakOut
 		this->_data->assets.LoadTexture("Paddle", PADDLE_FILEPATH);
 		this->_data->assets.LoadTexture("Brick", BRICK_FILEPATH);
 		this->_data->assets.LoadTexture("Ball", BALL_FILEPATH);
+
+
+
+		soundBufferStart.loadFromFile(SOUND_START);
+		soundStart.setBuffer(soundBufferStart);
+		soundStart.setVolume(50.f);
+		soundStart.play();
 
 		brick = new Brick(_data);
 		ball = new Ball(_data);
@@ -52,11 +59,13 @@ namespace BreakOut
 			{
 				this->_data->window.close();
 			}
-			/*if (this->_data->input.IsSpriteClicked(_background, Mouse::Left, this->_data->window)) {
-				
-				
-				
-			}*/
+			//if (this->_data->input.IsSpriteClicked(_background, Mouse::Left, this->_data->window)) {
+			//	
+			//	//soundStart.play();
+			//	this->_data->machine.AddState(StateRef(new WinScreenState(_data)), true);
+
+			//	
+			//}
 			
 		}
 	}
@@ -73,9 +82,22 @@ namespace BreakOut
 				break;
 			}
 		}
+		if (brickSprites.size() == 0) {
+			this->_data->machine.AddState(StateRef(new WinScreenState(_data)), true);
+		}
 
-		collision.CheckWallCollsion(ball->GetSprite(), movement);
 		collision.CheckPaddleCollision(ball->GetSprite(), paddle->GetSprite(), movement, movementOrigin);
+		collision.CheckWallCollsion(ball->GetSprite(), movement);
+		if (collision.CheckWallDownCollsion(ball->GetSprite())) {
+			/*for (int i = 0; i < brickSprites.size();i=i)
+			{
+					brick->DeleteBrick(brickSprites.at(i), i);
+			}*/
+			brickSprites.clear();
+			this->_data->machine.AddState(StateRef(new LoseScreenState(_data)), true);
+
+		}
+		
 		
 
 
@@ -104,6 +126,7 @@ namespace BreakOut
 
 
 	}
+
 }
 
 

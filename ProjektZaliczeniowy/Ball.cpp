@@ -1,6 +1,9 @@
 #include "Ball.h"
 #include"Definitions.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 using namespace sf;
 
 namespace BreakOut
@@ -14,10 +17,15 @@ namespace BreakOut
 
 	void Ball::SpawnBall()
 	{
-
+		float random{};
 		Sprite sprite(_data->assets.GetTexture("Ball"));
 		sprite.setScale(0.8, 0.8);
-		sprite.setPosition(SCREEN_WIDTH / 2 - sprite.getGlobalBounds().width / 2, SCREEN_HEIGHT / 1.4);
+		srand(std::time(NULL));
+		//sprite.setPosition(SCREEN_WIDTH / 2 - sprite.getGlobalBounds().width / 2, SCREEN_HEIGHT / 1.4);
+		do {
+			random = rand() % 3 - 1;
+		} while (random == 0);
+		sprite.setPosition(SCREEN_WIDTH / 2 - sprite.getGlobalBounds().width / 2 - random*(SCREEN_WIDTH / (rand()%6+3)), SCREEN_HEIGHT / 1.4);
 		ballSprites.push_back(sprite);
 
 		
@@ -51,11 +59,11 @@ namespace BreakOut
 	void Ball::SpeedBall(Vector2f& movement, Vector2f& movementOrigin) {
 		if (_clockBall.getElapsedTime().asSeconds() > time.asSeconds()) {
 			time = time + seconds(6);
-			movement.x = movement.x * 1.01;
-			movement.y = movement.y * 1.01;
-			movementOrigin.x = movementOrigin.x * 1.01;
-			movementOrigin.y = movementOrigin.y * 1.01;
-			cout << "speed!!!" << endl;
+			movement.x = movement.x * 1.05;
+			movement.y = movement.y * 1.05;
+			movementOrigin.x = movementOrigin.x * 1.05;
+			movementOrigin.y = movementOrigin.y * 1.05;
+			//cout << "speed!!!" << endl;
 		}
 	}
 

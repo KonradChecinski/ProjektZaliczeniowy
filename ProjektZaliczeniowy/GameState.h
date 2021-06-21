@@ -2,12 +2,14 @@
 #include<SFML/Graphics.hpp>
 #include"Game.h"
 #include"State.h"
-#include "Definitions.h"
+#include"Definitions.h"
 #include"Brick.h"
 #include"Ball.h"
 #include"Paddle.h"
 #include"Game.h"
 #include"Collision.h"
+#include"WinScreenState.h"
+#include<SFML/Audio.hpp>
 #include<SFML/Graphics.hpp>
 using namespace sf;
 
@@ -45,6 +47,11 @@ namespace BreakOut
 		Ball* ball;
 		Paddle* paddle;
 		Collision collision;
+
+		SoundBuffer soundBufferStart;
+		Sound soundStart;
+
+		int Actual_Level = 3;
 	};
 	
 	

@@ -25,7 +25,6 @@ namespace BreakOut
 
 	void Brick::DeleteBrick(Sprite sprite, int i) {
 		brickSprites.erase(brickSprites.begin() + i);
-		sprite.setPosition(-1000, 0);
 		//cout << "Brick " << i << endl;
 	}
 

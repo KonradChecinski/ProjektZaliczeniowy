@@ -5,6 +5,7 @@
 #include<iostream>
 #include"GameState.h"
 #include"OptionsState.h"
+#include"LoseScreenState.h"
 using namespace sf;
 using namespace std;
 
