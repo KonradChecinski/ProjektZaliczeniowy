@@ -100,6 +100,12 @@ namespace BreakOut
 				this->_data->machine.AddState(StateRef(new GameState(_data, 4)), true);
 
 			}
+			if (this->_data->input.IsSpriteClicked(this->_back, Mouse::Left, this->_data->window))
+			{
+
+				this->_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
+
+			}
 
 		}
 	}

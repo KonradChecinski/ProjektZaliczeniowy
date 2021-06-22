@@ -3,7 +3,7 @@
 #include "Definitions.h"
 #include<iostream>
 #include"MainMenuState.h"
-#include"GameState.h"
+#include"ChooseLevelState.h"
 using namespace sf;
 using namespace std;
 
@@ -55,7 +55,7 @@ namespace BreakOut
 			}
 			if (this->_data->input.IsSpriteClicked(this->_playButton, Mouse::Left, this->_data->window))
 			{
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				this->_data->machine.AddState(StateRef(new ChooseLevelState(_data)), true);
 			}
 
 		}
