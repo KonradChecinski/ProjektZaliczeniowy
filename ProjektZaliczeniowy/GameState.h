@@ -35,7 +35,7 @@ namespace BreakOut
 		Vector2f movement{};
 		Vector2f movementOrigin{};
 
-		int Actual_Level = 3;
+		int Actual_Level;
 
 	private:
 		int level;
