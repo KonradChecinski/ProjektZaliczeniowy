@@ -9,7 +9,7 @@ namespace BreakOut
 	void AssetManager::LoadTexture(string name, string fileName)
 	{
 		Texture texture;
-		
+
 		if (texture.loadFromFile(fileName))
 		{
 			this->_textures[name] = texture;
@@ -17,7 +17,7 @@ namespace BreakOut
 	}
 	Texture& AssetManager::GetTexture(string name)
 	{
-		return this->_textures.at(name);
+		return this->_textures[name];
 	}
 
 	void AssetManager::LoadFont(string name, string fileName)
@@ -28,10 +28,6 @@ namespace BreakOut
 		{
 			this->_fonts[name] = font;
 		}
-	}
-	Font& AssetManager::GetFont(string name)
-	{
-		return this->_fonts.at(name);
 	}
 }
 

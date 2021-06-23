@@ -31,6 +31,10 @@ namespace BreakOut
 		this->_exitButton.setTexture(this->_data->assets.GetTexture("Exit Button"));
 		this->_title.setTexture(this->_data->assets.GetTexture("Title"));
 
+	
+
+
+
 		this->_playButton.setPosition((SCREEN_WIDTH / 2) - (this->_playButton.getGlobalBounds().width / 2), this->_playButton.getGlobalBounds().height * 3.0);
 		this->_optionsButton.setPosition((SCREEN_WIDTH / 2) - (this->_optionsButton.getGlobalBounds().width / 2), (this->_optionsButton.getGlobalBounds().height * 4.5));
 		this->_exitButton.setPosition((SCREEN_WIDTH / 2) - (this->_exitButton.getGlobalBounds().width / 2), (this->_exitButton.getGlobalBounds().height * 6.0));
